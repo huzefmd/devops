@@ -1,135 +1,174 @@
+
 ## 💪 Hands-On Exercises
 
 ### Exercise 1: Getting Started
 
 ### Challenge - 1
-![exe1](image.png)
- 
-![alt text](image-2.png)
+
+![exe1](./images/image.png)
+
+![alt text](./images/image-2.png)
 
 ### Challenge - 2
-![alt text](image-3.png)
 
-![alt text](image-1.png)
+![alt text](./images/image-3.png)
+
+![alt text](./images/image-1.png)
 
 ### Challenge - 3
-![alt text](image-4.png)
 
-![alt text](image-5.png)
+![alt text](./images/image-4.png)
+
+![alt text](./images/image-5.png)
 
 ### Challenge - 4
-![alt text](image-6.png)
 
-![alt text](image-7.png)
+![alt text](./images/image-6.png)
+
+![alt text](./images/image-7.png)
 
 ### Linux is C000000000000l
-![alt text](image-8.png)
+
+![alt text](./images/image-8.png)
 
 
-### Exercise 2: 2. File System & Navigation
+## Exercise 2: File System & Navigation
 
 ### Challenge - 1
-![alt text](image-9.png)
 
-### solution
-ubuntu@ip-172-31-33-31:/home$  mkdir -p projects/devops/practice
+![alt text](./images/image-9.png)
 
-Explanation:
-- mkdir – creates directories.
-- -p – creates parent directories if they don't exist.
-- projects/devops/practice – nested directory path.
+### Solution
 
-![alt text](image-10.png)
+```bash
+ubuntu@ip-172-31-33-31:/home$ mkdir -p projects/devops/practice
+```
 
-#### Challenge - 2
-![alt text](image-11.png)
+**Explanation:**
 
-### solution
+- `mkdir` – creates directories.
+- `-p` – creates parent directories if they don't exist.
+- `projects/devops/practice` – nested directory path.
 
+![alt text](./images/image-10.png)
+
+
+### Challenge - 2
+
+![alt text](./images/image-11.png)
+
+### Solution
+
+```bash
 touch file1.txt file2.txt file3.txt
 
 ubuntu@ip-172-31-33-31:~/projects/devops/practice$ touch a.txt b.txt c.txt
+
 ubuntu@ip-172-31-33-31:~/projects/devops/practice$ ls
 a.txt  b.txt  c.txt
-ubuntu@ip-172-31-33-31:~/
+```
 
-#### Challenge - 3
+### Challenge - 3
 
-![alt text](image-12.png)
+![alt text](./images/image-12.png)
 
-### solution
+### Solution
+
+```bash
 cp *.txt wildcard/
+```
 
-Command	Purpose
-cp	Copies files; originals remain
-mv	Moves files; originals disappear from the source
-*.txt	Matches all .txt files
+| Command | Purpose |
+|---|---|
+| `cp` | Copies files; originals remain |
+| `mv` | Moves files; originals disappear from the source |
+| `*.txt` | Matches all `.txt` files |
 
-![alt text](image-13.png)
+![alt text](./images/image-13.png)
 
-#### Challenge - 4
 
-![alt text](image-14.png)
+### Challenge - 4
 
-### solution 
+![alt text](./images/image-14.png)
 
-# Copy
-cp source.txt destination.txt          # Copy file
-cp -r sourcedir/ destdir/              # Copy directory recursively
+### Solution
 
-# Move/Rename
-mv oldname.txt newname.txt             # Rename
-mv file.txt /path/to/destination/      # Move
+**Copy**
 
-# Delete
-rm filename.txt                        # Delete file
-rm -r directory/                       # Delete directory recursively
-rm -rf directory/                      # Force delete (no confirmation)
-rm -i file.txt                         # Interactive (ask before delete)
+```bash
+cp source.txt destination.txt
+cp -r sourcedir/ destdir/
+```
 
+**Move / Rename**
+
+```bash
+mv oldname.txt newname.txt
+mv file.txt /path/to/destination/
+```
+
+**Delete**
+
+```bash
+rm filename.txt
+rm -r directory/
+rm -rf directory/
+rm -i file.txt
+```
+
+**Practical execution:**
+
+```bash
 ubuntu@ip-172-31-33-31:~/projects/devops/practice/wildcard$ ls
 a.txt  b.txt  c.txt
+
 ubuntu@ip-172-31-33-31:~/projects/devops/practice/wildcard$ cd ..
+
 ubuntu@ip-172-31-33-31:~/projects/devops/practice$ mv b.txt notes.txt
+
 ubuntu@ip-172-31-33-31:~/projects/devops/practice$ ls
 a.txt  c.txt  notes.txt  wildcard
-ubuntu@ip-172-31-33-31:~/projects/devops/practice$
+```
 
 
-#### Challenge - 5
+### Challenge - 5
 
-![alt text](image-15.png)
+![alt text](./images/image-15.png)
 
-### solution 
+### Solution
 
-
+```bash
 ubuntu@ip-172-31-33-31:~/projects/devops/practice$ echo $PWD
+
 /home/ubuntu/projects/devops/practice
-ubuntu@ip-172-31-33-31:~/projects/devops/practice$ ^C
+```
 
-#### Challenge - 6
-
-![alt text](image-16.png)
-
-### solution 
+The `$PWD` environment variable displays the current working directory.
 
 
+### Challenge - 6
+
+![alt text](./images/image-16.png)
+
+### Solution
+
+```bash
 ubuntu@ip-172-31-33-31:~/projects/devops/practice$ ls
 a.txt  c.txt  notes.txt  wildcard
+
 ubuntu@ip-172-31-33-31:~/projects/devops/practice$ rm -r wildcard
+
 ubuntu@ip-172-31-33-31:~/projects/devops/practice$ ls
 a.txt  c.txt  notes.txt
-ubuntu@ip-172-31-33-31:~/projects/devops/practice$
-
-
+```
 
 
 ## 🎯 Summary
 
 ### Key Commands Learned
 
-| **Category** | **Commands** |
-|--------------|--------------|
+| Category | Commands |
+|---|---|
 | Navigation | `pwd`, `ls`, `cd`, `tree` |
 | Files | `touch`, `cat`, `cp`, `mv`, `rm` |
 | Permissions | `chmod`, `chown` |
@@ -138,13 +177,15 @@ ubuntu@ip-172-31-33-31:~/projects/devops/practice$
 | Process | `ps`, `top`, `kill` |
 | Scripting | Variables, loops, conditionals |
 
+
 ### Best Practices
 
-1. ✅ Always use **tab completion** to avoid typos
-2. ✅ Use `man command` to read manual pages
-3. ✅ Test destructive commands (`rm -rf`) in safe environments
-4. ✅ Use version control (Git) for scripts
-5. ✅ Add comments to your scripts
+1. ✅ Always use **tab completion** to avoid typos.
+2. ✅ Use `man command` to read manual pages.
+3. ✅ Test destructive commands (`rm -rf`) in safe environments.
+4. ✅ Use version control (Git) for scripts.
+5. ✅ Add comments to your scripts.
+
 
 ---
 
@@ -152,9 +193,10 @@ ubuntu@ip-172-31-33-31:~/projects/devops/practice$
 
 - [Linux Journey](https://linuxjourney.com/)
 - [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial)
-- [ExplainShell](https://explainshell.com/) - Explains shell commands
+- [ExplainShell](https://explainshell.com/) - Explains shell commands.
 - [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+
 
 ---
 
-**Next**: [Git Hands-On →](./03-git-hands-on.md)
+**Next:** [Git Hands-On →](./03-git-hands-on.md)
